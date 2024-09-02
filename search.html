@@ -1,0 +1,31 @@
+<input type="text" onkeyup="check(event)">
+<div>
+    <h1>one</h1>
+    <h1>two</h1>
+    <h1>three</h1>
+    <h1>four</h1>
+    <h1>five</h1>
+    <h1>virat</h1>
+</div>
+
+
+
+<script>
+var entertext=""
+var container = document.querySelector("div")
+var elements = container.querySelectorAll("h1")
+console.log(elements)
+
+function check(event){
+    console.log(event.target.value)
+
+    entertext = event.target.value.toLowerCase(); 
+    elements.forEach(function(element) {
+        if (element.textContent.toLowerCase().indexOf(entertext) < 0) {
+            element.style.display = "none"; 
+        } else {
+            element.style.display = ""; 
+        }
+    });
+}
+</script>
